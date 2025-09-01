@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvy Ramos - IT STUDENT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #a24b8f 0%, #a24b8f 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 230px;
+            height: 250px;
+            border-radius: 30%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header .title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #a24b8f;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #a24b8f;
+            padding-bottom: 10px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            background: #a24b8f;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #e666ea, #a24b8f);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #160101;
+          
+        }
+
+        .item-company {
+            color: #160101;
+            font-weight: bold;
+        }
+
+        .item-date {
+            background: #a24b8f;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .item-description {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .item-description ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .item-description li {
+            margin-bottom: 5px;
+        }
+
+        .project-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #a24b8f;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: #a24b8f;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .contact-section {
+            background: #a24b8f;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .contact-item {
+                font-size: 0.9rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .contact-links {
+                gap: 15px;
+            }
+
+            .contact-link {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <header class="header">
+            
+            <img src="c:\Users\juvy\Desktop\ramos\portfolio\images\myphoto.jpg" alt="My Photo" class="profile-img">
+            <h1><b><i>Juvy Ramos</i></b></h1>
+            <p class="title">IT STUDENT</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>juvyr3860@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+639945671289</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Escalante City, Negros Occidental</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <span>linkedin.com/in/juvyramos</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2>About Me</h2>
+                    <b>I am a hardworking student that nothing can't even comprehend how goal oriented I am as a student.<b>
+                </section>
+
+                <section class="section">
+                    <h2>Skills</h2>
+                    <div class="skill-item">
+                        <div class="skill-name">Dance</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Excel</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Emotional Maturity</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Good Listener</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Emotionally Grounded</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Languages</h2>
+                    <div style="margin-bottom: 10px;"><strong>English</strong> - Conversational</div>
+                    <div style="margin-bottom: 10px;"><strong>Bisaya</strong> - Native</div>
+                    <div style="margin-bottom: 10px;"><strong>Hiligaynon</strong> - Native</div>
+                </section>
+            </aside>
+
+            <main>
+               
+                <section class="section">
+                    <h2>Work Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-description">
+                            <b>I don't currently have any official work experience. I have a strong desire to learn and remain open-minded and dedicate myself to my professional growth.
+                                I'm sure that my education and commitment will enable me to make a valuable contribution to any group or company.</b>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Science, Technology, Engineering and Mathematics (STEM)</div>
+                                <div class="item-company">Mount Carmel College Inc.</div>
+                            </div>
+                            <div class="item-date">2021 - 2022</div>
+                        </div>
+                        <div class="item-description">
+                            <b>My continuous academic success, strong dedication, and perseverance every step of my studies were acknowledged when I graduated with honors from Senior High School.</b>
+                        </div>
+                    </div>
+                </section>
+
+        <section class="contact-section">
+            <p>I would be delighted to collaborate with you.</p>
+            <div class="contact-links">
+                <a href="mailto:juvyr3860@gmail.com" class="contact-link">Email Me</a>
+                <a href=   "https://www.linkedin.com/in/juvy-ramos-7b6913381/" target="_blank" class="contact-link">LinkedIn</a>
+                <a href="https://github.com/Juvy12325" target="_blank" class="contact-link">GitHub</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
